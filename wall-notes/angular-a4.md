@@ -24,7 +24,9 @@
 - resolver only when blocking navigation is intentional.
 
 ### Forms / HTTP
-- reactive forms for complex explicit state;
+- Signal Forms for modern signal-oriented typed form state;
+- reactive forms remain strong for established/complex observable form architectures;
+- template forms for genuinely simple local forms;
 - server validation is authoritative;
 - HttpClient typing ≠ runtime validation;
 - interceptor chain order matters;
@@ -57,5 +59,11 @@ Backend enforces authorization. Frontend secrets do not exist. Use semantic HTML
 ### SSR
 No unconditional browser APIs. Keep request state isolated. Hydration requires compatible server/client output.
 
+### Lifecycle / composition
+- clean up with DestroyRef / lifecycle-aware RxJS teardown;
+- use view/content signal queries when composition requires references;
+- content projection is parent-owned content;
+- use afterNextRender for browser DOM work that truly requires rendered DOM.
+
 ### Senior review
-Who owns state? Correct lifetime? Correct async operator? Any hidden effect cycle? Cross-feature coupling? Accessible? Testable? Measured?
+Who owns state? Correct lifetime? Correct async operator? Any hidden effect cycle? Correct form model? Cleanup owned? Cross-feature coupling? Accessible? Testable? Measured?

@@ -46,6 +46,31 @@ Separate:
 
 Avoid duplicating complex domain rules in Angular if the server owns truth. Represent server validation errors cleanly.
 
+### Signal Forms (modern Angular)
+
+Modern Angular also provides **Signal Forms** for signal-oriented form state. The current Angular API marks Signal Forms stable since v22; the guide positions them especially well for new signal-based applications while reactive forms remain a strong choice for established codebases.
+
+Signal Forms use a writable signal as the source of truth and build a typed field tree around it:
+
+```ts
+import { form, required, email } from '@angular/forms/signals';
+
+readonly model = signal({
+  email: '',
+  displayName: ''
+});
+
+readonly profileForm = form(this.model, path => {
+  required(path.displayName);
+  required(path.email);
+  email(path.email);
+});
+```
+
+Choose based on the application's architecture and migration cost, not novelty. Do not mix three forms paradigms inside one feature without a deliberate interoperability reason.
+
+For deeper mechanics, validation schemas, submission and migration guidance, see [Signal Forms deep dive](16-signal-forms-deep-dive.md).
+
 ### HTTP
 
 ```ts

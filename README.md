@@ -9,7 +9,7 @@ A dense Angular knowledge base from required TypeScript fundamentals through app
 1. [TypeScript + Angular mental model](docs/00-typescript-angular-mental-model.md)
 2. [Bootstrap, standalone components, templates, directives and pipes](docs/01-bootstrap-components-templates.md)
 3. [Communication, DI, routing and guards](docs/02-communication-di-routing.md)
-4. [Forms, HTTP and interceptors](docs/03-forms-http.md)
+4. [Forms (including Signal Forms), HTTP and interceptors](docs/03-forms-http.md)
 5. [RxJS and reactive programming](docs/04-rxjs.md)
 6. [Signals, computed state, effects and state management](docs/05-signals-state.md)
 7. [Feature architecture, libraries and reusable UI](docs/06-architecture-libraries.md)
@@ -41,7 +41,7 @@ This repository explains Angular-specific mechanics and decisions. It deliberate
 - [ ] Use directives/pipes appropriately.
 - [ ] Design DI tokens/factories without service-locator behavior.
 - [ ] Model routing, lazy routes, resolvers and guards correctly.
-- [ ] Choose reactive vs template forms intentionally.
+- [ ] Choose Signal Forms, reactive forms or template forms intentionally.
 - [ ] Build typed HTTP flows and interceptor chains.
 - [ ] Use RxJS operators by semantic intent.
 - [ ] Use signals/computed/effects without hidden feedback loops.
@@ -77,5 +77,7 @@ After the core sequence, use these production-level chapters:
 13. [RxJS, signals and state concurrency](docs/12-rxjs-signals-state-deep-dive.md)
 14. [Rendering, zoneless change detection and performance](docs/13-rendering-zoneless-performance-deep-dive.md)
 15. [SSR, hydration, runtime configuration and Angular testing](docs/14-ssr-hydration-testing-runtime-deep-dive.md)
+16. [Component lifecycle, queries and composition](docs/15-component-lifecycle-composition-deep-dive.md)
+17. [Signal Forms and modern forms architecture](docs/16-signal-forms-deep-dive.md)
 
-These chapters revisit the core material at senior/expert depth: lifecycle ownership, injector resolution, asynchronous cancellation, signal/RxJS boundaries, modern rendering behavior, deferred loading, server/client execution, hydration safety and test architecture.
+These chapters revisit the core material at senior/expert depth: lifecycle ownership, injector resolution, asynchronous cancellation, signal/RxJS boundaries, modern rendering behavior, deferred loading, component composition, Signal Forms, server/client execution, hydration safety and test architecture.

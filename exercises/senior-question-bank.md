@@ -69,3 +69,12 @@
 48. Diagnose duplicate SSR/client HTTP requests.
 49. Separate build-time and runtime configuration.
 50. Perform a senior review of a mega-component and propose boundaries.
+
+
+## Modern Angular forms/lifecycle
+51. Signal Forms vs reactive forms: choose for a new complex product form and justify the trade-off.
+52. Explain why a writable signal can be the source of truth for a Signal Form.
+53. Design cleanup for a manually subscribed stream using `takeUntilDestroyed`.
+54. View query vs content query: choose for a compound card component.
+55. When should DOM work use `afterNextRender` instead of a lifecycle hook?
+56. Explain why projected content is owned by the declaring parent even when rendered inside the child.
