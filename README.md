@@ -67,3 +67,15 @@ This repository explains Angular-specific mechanics and decisions. It deliberate
 - Client-side authorization is UX, never the security boundary.
 - Optimize only after understanding rendering/network/bundle costs.
 - Framework APIs are tools; application boundaries matter more than API fashion.
+
+
+## Expert deep dives
+
+After the core sequence, use these production-level chapters:
+
+12. [DI, provider scopes and routing lifetimes](docs/11-di-routing-provider-lifetimes-deep-dive.md)
+13. [RxJS, signals and state concurrency](docs/12-rxjs-signals-state-deep-dive.md)
+14. [Rendering, zoneless change detection and performance](docs/13-rendering-zoneless-performance-deep-dive.md)
+15. [SSR, hydration, runtime configuration and Angular testing](docs/14-ssr-hydration-testing-runtime-deep-dive.md)
+
+These chapters revisit the core material at senior/expert depth: lifecycle ownership, injector resolution, asynchronous cancellation, signal/RxJS boundaries, modern rendering behavior, deferred loading, server/client execution, hydration safety and test architecture.
