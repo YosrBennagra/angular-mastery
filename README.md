@@ -31,7 +31,7 @@ This repository explains Angular-specific mechanics and decisions. It deliberate
 | Architecture | Angular feature boundaries/composition | [software-architecture](https://github.com/YosrBennagra/software-architecture) |
 | Principles | cohesion, coupling, SOLID, immutability | [programming-principles](https://github.com/YosrBennagra/programming-principles) |
 | Security | Angular auth integration/client-side concerns | [application-security](https://github.com/YosrBennagra/application-security) |
-| CI/build | Angular build/runtime configuration concepts | [devops-platform-engineering](https://github.com/YosrBennagra/devops-platform-engineering) |
+| CI/build | Angular build/runtime configuration concepts | [devops-platform-engineering](https://github.com/YosrBennagra/devops-platform-engineering-) |
 
 ## Progress checklist
 
