@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+# Angular Mastery — 0 → Expert
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dense Angular knowledge base from required TypeScript fundamentals through application architecture, reactivity, performance, SSR/hydration and senior-level internals.
 
-## Available Scripts
+> Master index: [software-engineer-roadmap](https://github.com/YosrBennagra/software-engineer-roadmap)
 
-In the project directory, you can run:
+## Learning order
 
-### `npm start`
+1. [TypeScript + Angular mental model](docs/00-typescript-angular-mental-model.md)
+2. [Bootstrap, standalone components, templates, directives and pipes](docs/01-bootstrap-components-templates.md)
+3. [Communication, DI, routing and guards](docs/02-communication-di-routing.md)
+4. [Forms, HTTP and interceptors](docs/03-forms-http.md)
+5. [RxJS and reactive programming](docs/04-rxjs.md)
+6. [Signals, computed state, effects and state management](docs/05-signals-state.md)
+7. [Feature architecture, libraries and reusable UI](docs/06-architecture-libraries.md)
+8. [Change detection, rendering, performance and lazy loading](docs/07-rendering-performance.md)
+9. [Errors, auth, authorization and accessibility](docs/08-errors-auth-a11y.md)
+10. [Testing, SSR/hydration, config, debugging and profiling](docs/09-testing-ssr-config-debug.md)
+11. [Angular internals and senior pitfalls](docs/10-internals-senior-pitfalls.md)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Use the [A4 wall note](wall-notes/angular-a4.md) for fast recall and the [senior question bank](exercises/senior-question-bank.md) for review.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Topic ownership
 
-### `npm test`
+This repository explains Angular-specific mechanics and decisions. It deliberately cross-links instead of duplicating broader subjects:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Topic | Angular-specific scope here | Deep owner |
+|---|---|---|
+| Testing | TestBed/component/router/HTTP Angular mechanics | [testing-engineering](https://github.com/YosrBennagra/testing-engineering) |
+| API design | HttpClient consumption/interceptors/errors | [api-engineering](https://github.com/YosrBennagra/api-engineering) |
+| Architecture | Angular feature boundaries/composition | [software-architecture](https://github.com/YosrBennagra/software-architecture) |
+| Principles | cohesion, coupling, SOLID, immutability | [programming-principles](https://github.com/YosrBennagra/programming-principles) |
+| Security | Angular auth integration/client-side concerns | [application-security](https://github.com/YosrBennagra/application-security) |
+| CI/build | Angular build/runtime configuration concepts | [devops-platform-engineering](https://github.com/YosrBennagra/devops-platform-engineering) |
 
-### `npm run build`
+## Progress checklist
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [ ] Use TypeScript types/generics/unions safely in Angular.
+- [ ] Explain bootstrap, standalone APIs and provider scope.
+- [ ] Build accessible components with clean inputs/outputs.
+- [ ] Use directives/pipes appropriately.
+- [ ] Design DI tokens/factories without service-locator behavior.
+- [ ] Model routing, lazy routes, resolvers and guards correctly.
+- [ ] Choose reactive vs template forms intentionally.
+- [ ] Build typed HTTP flows and interceptor chains.
+- [ ] Use RxJS operators by semantic intent.
+- [ ] Use signals/computed/effects without hidden feedback loops.
+- [ ] Know when local state is enough and when NgRx is justified.
+- [ ] Structure features around business capabilities.
+- [ ] Build reusable libraries without accidental global coupling.
+- [ ] Explain change detection/rendering and avoid unnecessary work.
+- [ ] Apply lazy loading/code splitting based on real boundaries.
+- [ ] Integrate error handling, authentication and authorization safely.
+- [ ] Build accessible keyboard/screen-reader-friendly interfaces.
+- [ ] Test behavior at appropriate Angular boundaries.
+- [ ] Explain SSR/hydration constraints.
+- [ ] Separate build-time from runtime configuration.
+- [ ] Debug change detection, RxJS, network and performance problems.
+- [ ] Recognize senior-level Angular anti-patterns.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Repository principles
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Prefer standalone, feature-oriented composition over accidental module/global coupling.
+- Prefer explicit state ownership and one-way data flow.
+- Use RxJS for streams/events/time and signals for synchronous reactive state; combine them deliberately.
+- Effects are for side effects, not derived state.
+- Client-side authorization is UX, never the security boundary.
+- Optimize only after understanding rendering/network/bundle costs.
+- Framework APIs are tools; application boundaries matter more than API fashion.
