@@ -269,4 +269,4 @@ The specific helper library can differ. The principle is behavior through the re
 - [Rendering/performance deep dive](13-rendering-zoneless-performance-deep-dive.md)
 - [Testing engineering](https://github.com/YosrBennagra/testing-engineering)
 - [Application security](https://github.com/YosrBennagra/application-security)
-- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering-)
+- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering)

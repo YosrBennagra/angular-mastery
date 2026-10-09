@@ -109,4 +109,4 @@ Better still, isolate browser storage behind an adapter if used broadly.
 ## Related / Prerequisite Links
 
 - [Testing engineering](https://github.com/YosrBennagra/testing-engineering)
-- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering-)
+- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering)

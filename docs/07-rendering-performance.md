@@ -108,4 +108,4 @@ Then render the computed state with stable tracking.
 ## Related / Prerequisite Links
 
 - [System design](https://github.com/YosrBennagra/system-design)
-- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering-)
+- [DevOps/platform engineering](https://github.com/YosrBennagra/devops-platform-engineering)
