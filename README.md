@@ -1,5 +1,7 @@
 # Angular Mastery — 0 → Expert
 
+> **Cheat sheet:** [CHEAT-SHEET.md](CHEAT-SHEET.md) (dense one-to-two-page revision sheet to print and keep on the wall)
+
 A dense Angular knowledge base from required TypeScript fundamentals through application architecture, reactivity, performance, SSR/hydration and senior-level internals.
 
 > Master index: [software-engineer-roadmap](https://github.com/YosrBennagra/software-engineer-roadmap)
