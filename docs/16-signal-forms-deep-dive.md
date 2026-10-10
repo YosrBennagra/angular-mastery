@@ -45,7 +45,7 @@ Do not classify one approach as universally "senior." Seniority is choosing base
 
 ```mermaid
 flowchart LR
-    M[Writable signal model] --> F[form()]
+    M[Writable signal model] --> F["form()"]
     F --> T[Typed FieldTree]
     S[Schema rules] --> T
     T --> UI[FormField bindings]

@@ -53,7 +53,7 @@ Bootstrap → DI/router → feature → state/streams → template → DOM
 
 ## Change detection & performance
 - Zone.js triggered CD after any async event. **Zoneless** (stable v20.2, default for new apps in v21) → CD runs on signal changes, template events, `async` pipe, `markForCheck`.
-- `OnPush`: check only on input reference change / event / async pipe / signal read in the template.
+- `OnPush`: check only on input reference change / event / async pipe / signal read in the template / `markForCheck()`. **Default for components since v22**; `ChangeDetectionStrategy.Eager` = the old `Default` (opt-out while migrating).
 - Mutating an object in place under OnPush = no update → use immutable updates.
 - Lazy routes `loadComponent` / `loadChildren`, plus `@defer` for heavy regions.
 - Measure: bundle (`ng build --stats-json`), Angular DevTools profiler, Lighthouse/Web Vitals (LCP, INP, CLS).
@@ -61,7 +61,7 @@ Bootstrap → DI/router → feature → state/streams → template → DOM
 ## Routing
 - Routes = architecture boundaries. Lazy-load per feature.
 - Functional guards (`CanActivateFn`) / resolvers. **Guards are UX, not security**: the backend authorises.
-- `withComponentInputBinding()` → route params arrive as inputs.
+- `withComponentInputBinding()` → route params arrive as inputs. v22: child routes inherit all parent params by default (`paramsInheritanceStrategy: 'always'`).
 
 ## Forms & HTTP
 | Form model | When |
@@ -71,39 +71,27 @@ Bootstrap → DI/router → feature → state/streams → template → DOM
 | Template-driven | genuinely simple forms |
 - Client validation = UX. **Server validation is authoritative.**
 - Functional interceptors (`HttpInterceptorFn`): auth header, errors, retry, loading. **Order matters.**
+- v22: the `fetch` backend is the default (`withFetch()` deprecated); use `withXhr()` only if you need upload progress.
 - `HttpClient<T>` typing is not runtime validation.
 
 ## Lifecycle
-`constructor (DI only)` → `ngOnChanges` → `ngOnInit` → `ngAfterViewInit` → `ngOnDestroy`
-- Prefer signals + `computed` over lifecycle-hook choreography.
-- Cleanup: `DestroyRef`, `takeUntilDestroyed()`. Direct DOM access: `afterNextRender`.
+`constructor` (DI only) → `ngOnChanges` → `ngOnInit` → `ngAfterViewInit` → `ngOnDestroy`. Prefer signals + `computed`; clean up with `DestroyRef`/`takeUntilDestroyed()`; DOM work in `afterNextRender`.
 
-## Architecture
-- Feature-first folders (feature = routes + UI + state + data access). `shared` = generic UI only. `core` = app singletons.
-- Facade service between components and state/API.
-- State: local signals → feature service with signals → NgRx SignalStore/Store only when shared, complex, event-driven state justifies it.
-- Libraries (Nx/workspaces) with public APIs and lint-enforced boundaries.
-
-## Security & accessibility
-- Angular escapes interpolation by default. `bypassSecurityTrust*` and `innerHTML` with user data → XSS risk.
-- **No secrets in the frontend.** `environment.ts` is public.
-- Tokens: prefer HttpOnly cookies (with CSRF protection) over localStorage when you can.
-- a11y: semantic HTML first, labels, focus management, keyboard navigation, accessible errors.
+## Architecture, security, a11y
+- Feature-first folders (routes + UI + state + data access); `shared` = generic UI, `core` = app singletons. Facade between components and state/API. State: local signals → signal service → NgRx SignalStore/Store only when justified. Lint-enforced library boundaries (Nx).
+- Interpolation is auto-escaped; `bypassSecurityTrust*`/`innerHTML` with user data = XSS. **No secrets in the bundle** (`environment.ts` is public). Prefer HttpOnly cookies (+ CSRF) or a BFF over `localStorage` tokens.
+- a11y: semantic HTML, labels, focus management, keyboard navigation.
 
 ## SSR & hydration
 - Server code runs per request: no `window`/`document` without guards (`isPlatformBrowser`, `afterNextRender`).
-- Hydration reuses server DOM, so server and client output must match. Incremental hydration = `@defer` + hydrate triggers.
+- Hydration reuses server DOM, so server and client output must match. Incremental hydration = `@defer` + `hydrate on …` triggers (on by default since v22).
 
 ## Testing
-- Test user-visible behaviour (TestBed + component harness / Testing Library), not private fields.
+- Test user-visible behaviour (TestBed + component harness / Testing Library), not private fields. **Vitest** is the default runner for new projects since v21 (Karma still supported).
 - Use `HttpTestingController` for HTTP. Use E2E (Playwright/Cypress) for critical journeys only.
 
 ## Senior gotchas
-- `effect()` writing to signals that it reads → hidden cycles. Derive with `computed` instead.
-- `subscribe` inside `subscribe` → use a flattening operator.
-- `mergeMap` on save clicks → duplicate or out-of-order writes.
-- `shareReplay` without `refCount` → subscription leak.
-- A root-provided service holding user/session state in SSR → data leaks between requests.
-- `@for` tracking by `$index` on reorderable lists → DOM churn and bugs.
+- `effect()` writing signals it reads (use `computed`/`linkedSignal`) · `subscribe` inside `subscribe` · `mergeMap` on saves · `shareReplay` without `refCount`.
+- Root service holding per-user state under SSR (leaks between requests) · `track $index` on reorderable lists.
 
 **Senior review:** Who owns this state? Is the lifetime right? Is the async operator right? Any hidden effect cycle? Is cleanup owned? Any cross-feature coupling? Accessible? Measured?
